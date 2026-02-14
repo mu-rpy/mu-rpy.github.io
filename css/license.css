@@ -1,0 +1,107 @@
+.license-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.license-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.license-container::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+.license-container::-webkit-scrollbar-thumb {
+    background: var(--accent-purple);
+    border-radius: 4px;
+}
+
+.license-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+.license-box {
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent-purple);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 30px var(--glow-purple);
+    backdrop-filter: blur(10px);
+}
+
+.license-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.license-content {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.license-content p {
+    margin-bottom: 20px;
+}
+
+.license-copyright {
+    font-weight: 600;
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+}
+
+.warranty {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: rgba(255, 121, 198, 0.05);
+    border-left: 3px solid var(--accent-purple);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px var(--glow-cyan);
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .license-box {
+        padding: 30px 25px;
+    }
+    
+    .license-title {
+        font-size: 2rem;
+    }
+    
+    .license-content {
+        font-size: 0.9rem;
+    }
+}

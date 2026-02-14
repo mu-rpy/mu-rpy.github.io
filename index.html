@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mu_rpy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="fade-in">
+    <canvas id="networkCanvas"></canvas>
+    
+    <div class="main-layout">
+        <div class="left-portfolio">
+            <div class="portfolio-box">
+                <div class="portfolio-header">
+                    <img src="assets/images/pfp.jpg" alt="Profile" class="profile-pic">
+                    <h1 class="portfolio-name">Mu_rpy</h1>
+                </div>
+                <p class="portfolio-bio">Systems-focused game dev & experimental coder.</p>
+                
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <span>🐍</span>
+                        <span class="tech-label">Python</span>
+                    </div>
+                    <div class="tech-icon">
+                        <span>⚡</span>
+                        <span class="tech-label">C# & Rust</span>
+                    </div>
+                    <div class="tech-icon">
+                        <span>🎥</span>
+                        <span class="tech-label">Editor</span>
+                    </div>
+                    <div class="tech-icon">
+                        <span>🎨</span>
+                        <span class="tech-label">2D/3D Modelling</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-links">
+                    <a href="about.html" class="portfolio-link">About Me</a>
+                    <a href="https://github.com/mu-rpy?tab=repositories" class="portfolio-link">Projects</a>
+                    <div class="portfolio-link contact-flip" id="contactFlip">
+                        <span class="contact-front">Contact</span>
+                        <span class="contact-back">drug.addict.murpy@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-content">
+            <div class="center-container">
+                <div class="outer-shell">
+                    <div class="repo-orbit">
+                        <a href="https://github.com/mu-rpy/LTX-Tools" class="repo-item repo-green" data-angle="0">
+                            <div class="repo-box">
+                                <span>LTX-Tools</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/mu-rpy/ArtlistIO-Tools" class="repo-item repo-yellow" data-angle="180">
+                            <div class="repo-box">
+                                <span>ArtlistIO-Tools</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="trollface-container">
+                    <img src="assets/images/trollface.png" alt="Trollface" class="trollface">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="projectsPopup">
+        <div class="popup-container">
+            <div class="popup-box">
+                <h2 class="popup-title">Hell Nah</h2>
+                <p class="popup-message">No one should see these abominations.</p>
+                <button class="popup-close" id="closePopup">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <div class="footer-content">
+            <span class="footer-text">Mu_rpy</span>
+            <span class="footer-separator">•</span>
+            <a href="license.html" class="footer-link">License</a>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
