@@ -1,0 +1,462 @@
+/* ===========================
+   ENHANCED BLACK HOLE EFFECTS
+   =========================== */
+
+/* Gravitational Lensing Ring */
+.gravitational-lens {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 121, 198, 0.4);
+    box-shadow: 
+        0 0 40px rgba(255, 121, 198, 0.6),
+        0 0 80px rgba(255, 121, 198, 0.3),
+        inset 0 0 40px rgba(255, 121, 198, 0.2);
+    z-index: 2;
+    animation: lensPulse 4s ease-in-out infinite, lensRotate 30s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes lensPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes lensRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Photon Sphere */
+.photon-sphere {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 2px solid rgba(139, 233, 253, 0.3);
+    box-shadow: 
+        0 0 30px rgba(139, 233, 253, 0.4),
+        inset 0 0 30px rgba(139, 233, 253, 0.2);
+    z-index: 2;
+    animation: photonOrbit 20s linear infinite, photonFlicker 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes photonOrbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes photonFlicker {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Particle Jets */
+.particle-jet {
+    position: absolute;
+    left: 50%;
+    width: 80px;
+    height: 300px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(139, 233, 253, 0.6) 20%,
+        rgba(139, 233, 253, 0.8) 40%,
+        rgba(139, 233, 253, 0.4) 60%,
+        transparent
+    );
+    filter: blur(8px);
+    z-index: 1;
+    animation: jetPulse 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.jet-top {
+    top: -250px;
+    animation: jetPulse 3s ease-in-out infinite, jetShimmer 1.5s ease-in-out infinite;
+}
+
+.jet-bottom {
+    bottom: -250px;
+    transform: translateX(-50%) rotate(180deg);
+    animation: jetPulse 3s ease-in-out infinite 0.5s, jetShimmer 1.5s ease-in-out infinite 0.5s;
+}
+
+@keyframes jetPulse {
+    0%, 100% {
+        opacity: 0.5;
+        height: 300px;
+    }
+    50% {
+        opacity: 0.8;
+        height: 350px;
+    }
+}
+
+@keyframes jetShimmer {
+    0%, 100% {
+        filter: blur(8px) brightness(1);
+    }
+    50% {
+        filter: blur(10px) brightness(1.3);
+    }
+}
+
+/* Enhanced Accretion Disk Layers */
+.accretion-disk-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.layer-1 {
+    width: 120%;
+    height: 120%;
+    animation: diskRotate 35s linear infinite reverse;
+    opacity: 0.4;
+    filter: blur(8px);
+}
+
+.layer-1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 45deg,
+        transparent,
+        rgba(189, 147, 249, 0.5) 20%,
+        transparent 40%,
+        transparent 60%,
+        rgba(189, 147, 249, 0.6) 80%,
+        transparent
+    );
+}
+
+.layer-2 {
+    width: 110%;
+    height: 110%;
+    animation: diskRotate 20s linear infinite;
+    opacity: 0.5;
+    filter: blur(6px);
+}
+
+.layer-2::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 90deg,
+        transparent,
+        rgba(255, 121, 198, 0.4) 30%,
+        transparent 50%,
+        transparent 70%,
+        rgba(255, 121, 198, 0.5) 90%,
+        transparent
+    );
+}
+
+/* Hawking Radiation Particles */
+.hawking-particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hawking-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(139, 233, 253, 0.9);
+    box-shadow: 0 0 15px rgba(139, 233, 253, 0.8);
+    animation: hawkingEscape 4s ease-out infinite;
+}
+
+.hawking-particle:nth-child(1) {
+    top: 0;
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.hawking-particle:nth-child(2) {
+    top: 15%;
+    left: 85%;
+    animation-delay: 0.5s;
+}
+
+.hawking-particle:nth-child(3) {
+    top: 50%;
+    left: 100%;
+    animation-delay: 1s;
+}
+
+.hawking-particle:nth-child(4) {
+    top: 85%;
+    left: 85%;
+    animation-delay: 1.5s;
+}
+
+.hawking-particle:nth-child(5) {
+    top: 100%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.hawking-particle:nth-child(6) {
+    top: 85%;
+    left: 15%;
+    animation-delay: 2.5s;
+}
+
+.hawking-particle:nth-child(7) {
+    top: 50%;
+    left: 0;
+    animation-delay: 3s;
+}
+
+.hawking-particle:nth-child(8) {
+    top: 15%;
+    left: 15%;
+    animation-delay: 3.5s;
+}
+
+@keyframes hawkingEscape {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(var(--x, 0) * 80px), calc(var(--y, 0) * 80px)) scale(1);
+        opacity: 0;
+    }
+}
+
+.hawking-particle:nth-child(1) { --x: 0; --y: -1; }
+.hawking-particle:nth-child(2) { --x: 0.7; --y: -0.7; }
+.hawking-particle:nth-child(3) { --x: 1; --y: 0; }
+.hawking-particle:nth-child(4) { --x: 0.7; --y: 0.7; }
+.hawking-particle:nth-child(5) { --x: 0; --y: 1; }
+.hawking-particle:nth-child(6) { --x: -0.7; --y: 0.7; }
+.hawking-particle:nth-child(7) { --x: -1; --y: 0; }
+.hawking-particle:nth-child(8) { --x: -0.7; --y: -0.7; }
+
+/* Enhanced Event Horizon */
+.event-horizon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, 
+        #000000 0%, 
+        #050505 40%, 
+        #0a0a0a 60%,
+        rgba(255, 121, 198, 0.1) 100%
+    );
+    box-shadow: 
+        inset 0 0 80px rgba(0, 0, 0, 1),
+        0 0 60px rgba(255, 121, 198, 0.6),
+        0 0 100px rgba(255, 121, 198, 0.4),
+        0 0 150px rgba(255, 121, 198, 0.2);
+    animation: pulseHorizon 4s ease-in-out infinite;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.horizon-distortion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 121, 198, 0.2),
+        transparent 50%
+    );
+    animation: distortionShift 6s ease-in-out infinite;
+}
+
+@keyframes distortionShift {
+    0%, 100% {
+        background: radial-gradient(circle at 30% 30%, 
+            rgba(255, 121, 198, 0.2),
+            transparent 50%
+        );
+    }
+    50% {
+        background: radial-gradient(circle at 70% 70%, 
+            rgba(139, 233, 253, 0.2),
+            transparent 50%
+        );
+    }
+}
+
+/* Enhanced Singularity */
+.singularity {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #000000;
+    box-shadow: 
+        inset 0 0 60px rgba(0, 0, 0, 1),
+        0 0 30px rgba(0, 0, 0, 0.9);
+    z-index: 4;
+    animation: singularityPulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.singularity-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center,
+        rgba(255, 121, 198, 0.8),
+        rgba(255, 121, 198, 0.4) 40%,
+        transparent 70%
+    );
+    box-shadow: 
+        0 0 20px rgba(255, 121, 198, 0.6),
+        0 0 40px rgba(255, 121, 198, 0.3);
+    animation: coreFlicker 1.5s ease-in-out infinite;
+}
+
+@keyframes singularityPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.02);
+    }
+}
+
+@keyframes coreFlicker {
+    0%, 100% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* Mouse Interaction Effects */
+.blackhole-container.interactive .event-horizon {
+    box-shadow: 
+        inset 0 0 80px rgba(0, 0, 0, 1),
+        0 0 80px rgba(255, 121, 198, 0.9),
+        0 0 140px rgba(255, 121, 198, 0.6),
+        0 0 200px rgba(255, 121, 198, 0.3);
+}
+
+.blackhole-container.interactive .singularity {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 
+        inset 0 0 60px rgba(0, 0, 0, 1),
+        0 0 50px rgba(255, 121, 198, 0.8);
+}
+
+.blackhole-container.interactive .gravitational-lens {
+    border-color: rgba(255, 121, 198, 0.7);
+    box-shadow: 
+        0 0 60px rgba(255, 121, 198, 0.8),
+        0 0 100px rgba(255, 121, 198, 0.5),
+        inset 0 0 60px rgba(255, 121, 198, 0.3);
+}
+
+.blackhole-container.interactive .particle-jet {
+    opacity: 1;
+    filter: blur(6px) brightness(1.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .gravitational-lens {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .photon-sphere {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .particle-jet {
+        width: 60px;
+        height: 200px;
+    }
+    
+    .jet-top {
+        top: -180px;
+    }
+    
+    .jet-bottom {
+        bottom: -180px;
+    }
+    
+    .hawking-particles {
+        width: 200px;
+        height: 200px;
+    }
+}

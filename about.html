@@ -10,54 +10,282 @@
 <body class="fade-in">
     <canvas id="networkCanvas"></canvas>
     
-    <div class="about-container">
-        <div class="about-box">
-            <h1 class="about-title">About</h1>
-            <div class="about-content">
-                <p>
-                    I’m a systems-focused developer interested in the architecture of complex software, from distributed networks to low-level engine design.
-                </p>
+    <nav class="nav-dots">
+        <button class="nav-dot active" data-section="header" aria-label="Go to header"></button>
+        <button class="nav-dot" data-section="experience" aria-label="Go to experience"></button>
+        <button class="nav-dot" data-section="education" aria-label="Go to education"></button>
+        <button class="nav-dot" data-section="skills" aria-label="Go to skills"></button>
+        <button class="nav-dot" data-section="projects" aria-label="Go to projects"></button>
+    </nav>
+    
+    <div class="scroll-container">
+        
+        <section id="header" class="resume-section header-section">
+            <div class="section-content">
+                <h1 class="main-title">
+                    <span class="glitch-text" data-text="Mu_rpy">Mu_rpy</span>
+                </h1>
+                <p class="subtitle">Systems & Software Engineer | Game Engines, Distributed Systems & Automation</p>
+                <div class="header-divider"></div>
+                <a href="https://mu-rpy.github.io/" class="back-link">← Back to Home</a>
+            </div>
+        </section>
 
-                <p>
-                    My primary focus is game development (Unreal Engine & Godot), with an emphasis on networking and performance optimization.
-                </p>
+        <section id="experience" class="resume-section experience-section">
+            <div class="section-content">
+                <h2 class="section-title" data-accent="purple">
+                    <span class="title-bracket">[</span>
+                    EXPERIENCE
+                    <span class="title-bracket">]</span>
+                </h2>
+                
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <h3 class="card-title">Software & Systems Development</h3>
+                        <div class="card-items">
+                            <div class="card-item">
+                                <span class="item-icon">⚙️</span>
+                                <div class="item-content">
+                                    <strong>Custom Engine Project</strong> | Systems Development
+                                    <p>Built a high-performance game engine from scratch, recreating complex collision algorithms and implementing memory-safe rendering pipelines.</p>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-icon">🖥️</span>
+                                <div class="item-content">
+                                    <strong>Server Infrastructure & Management</strong> | Network Operations
+                                    <p>Managed home and remote servers; patched vulnerabilities, optimized processes, and monitored performance to improve reliability and security.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <p>
-                    I’ve built a custom engine from scratch to tackle specific challenges like <b>implementing spatial partitioning for efficient collision detection</b> and <b>managing memory-safe rendering pipelines</b>. My projects also included 3D modeling, rigging, and video editing to handle the full development cycle.
-                </p>
+                    <div class="experience-card">
+                        <h3 class="card-title">Automation & Security</h3>
+                        <div class="card-items">
+                            <div class="card-item">
+                                <span class="item-icon">🤖</span>
+                                <div class="item-content">
+                                    <strong>Automation & Bots</strong>
+                                    <p>Developed algorithms to mimic player behavior on large servers; created highly efficient bots capable of automating complex and repetitive tasks.</p>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-icon">🔒</span>
+                                <div class="item-content">
+                                    <strong>Security Research</strong>
+                                    <p>Investigated and discovered zero-day vulnerabilities and other security flaws for smaller companies, improving software safety and resilience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <p>
-                    I enjoy pushing technical boundaries through experimental projects. This includes building a <b>peer-to-peer mini-computer within Minecraft</b>, where I had to solve for <b>signal latency and logic-gate synchronization</b> to simulate computation and basic networking in a restricted environment.
-                </p>
-
-                <p>
-                    I use Python for rapid prototyping, but move to C# and Rust for performance-critical systems. My broader toolkit includes C, C++, TypeScript, and SQL, along with ongoing experimentation in Assembly to better understand hardware-level execution.
-                </p>
-
-                <h2 class="tech-category">Mastered</h2>
-                <div class="tech-stack">
-                    <span class="tech-item">C#</span>
-                    <span class="tech-item">C++</span>
-                    <span class="tech-item">C</span>
-                    <span class="tech-item">Python</span>
-                    <span class="tech-item">TypeScript</span>
-                    <span class="tech-item">JavaScript</span>
-                    <span class="tech-item">SQL</span>
-                    <span class="tech-item">Mojo</span>
-                    <span class="tech-item">Rust</span>
-                    <span class="tech-item">Bash</span>
-                </div>
-
-                <h2 class="tech-category">Still Learning / Amateur</h2>
-                <div class="tech-stack">
-                    <span class="tech-item">PHP</span>
-                    <span class="tech-item">Assembly</span>
-                    <span class="tech-item">Ruby</span>
+                    <div class="experience-card">
+                        <h3 class="card-title">Multimedia Production & Technical Art</h3>
+                        <div class="card-items">
+                            <div class="card-item">
+                                <span class="item-icon">🎨</span>
+                                <div class="item-content">
+                                    <strong>3D Modeling & Rigging</strong> | Technical Art & Animation
+                                    <p>Created fully rigged 3D assets and integrated them into proprietary software and game engines.</p>
+                                </div>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-icon">🎬</span>
+                                <div class="item-content">
+                                    <strong>Post-Production & Audio Engineering</strong> | Multimedia Production
+                                    <p>Produced video editing, motion graphics, and audio mastering using Adobe Premiere Pro, After Effects, DaVinci Resolve, FL Studio, and Ableton Live.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <a href="https://mu-rpy.github.io/" class="back-link">← Back to Home</a>
+        </section>
+
+        <section id="education" class="resume-section education-section">
+            <div class="section-content">
+                <h2 class="section-title" data-accent="cyan">
+                    <span class="title-bracket">&lt;</span>
+                    EDUCATION
+                    <span class="title-bracket">/&gt;</span>
+                </h2>
+                
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="card-header">
+                            <span class="edu-icon">📚</span>
+                            <h3>Self-Taught Software Engineer</h3>
+                        </div>
+                        <p>I focused on Python, C/C++, networking protocols, and software architecture through intensive independent study.</p>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="card-header">
+                            <span class="edu-icon">🔬</span>
+                            <h3>Technical Research</h3>
+                        </div>
+                        <p>I also explored low-level system performance, Assembly, and hardware execution to understand optimization from the ground up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="resume-section skills-section">
+            <div class="section-content">
+                <h2 class="section-title" data-accent="pink">
+                    <span class="title-bracket">{"</span>
+                    SKILLS
+                    <span class="title-bracket">"}</span>
+                </h2>
+                
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">Programming (Mastered)</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Mojo</span>
+                            <span class="skill-tag">Rust</span>
+                            <span class="skill-tag">Bash</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Infrastructure & Security</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Linux Server Administration</span>
+                            <span class="skill-tag">Remote Server Management</span>
+                            <span class="skill-tag">SSH</span>
+                            <span class="skill-tag">Dependency Management</span>
+                            <span class="skill-tag">Performance Optimization</span>
+                            <span class="skill-tag">Security Patching</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Post-Production</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Adobe Premiere Pro</span>
+                            <span class="skill-tag">After Effects</span>
+                            <span class="skill-tag">DaVinci Resolve</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Audio Engineering</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">FL Studio</span>
+                            <span class="skill-tag">Ableton Live</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Technical</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Unreal Engine</span>
+                            <span class="skill-tag">Godot</span>
+                            <span class="skill-tag">Distributed Networks</span>
+                            <span class="skill-tag">Memory Management</span>
+                            <span class="skill-tag">Automation & Bots</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="resume-section projects-section">
+            <div class="section-content">
+                <h2 class="section-title" data-accent="multi">
+                    <span class="title-bracket">###</span>
+                    TOP PROJECTS
+                    <span class="title-bracket">###</span>
+                </h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card" data-status="released">
+                        <div class="project-header">
+                            <h3 class="project-title">Dynamic & Large-Scale Search Algorithms</h3>
+                            <span class="status-badge released">Released</span>
+                        </div>
+                        <p class="project-description">
+                            Recreated and optimized niche image comprehension models and large-scale search algorithms using regression and random forest techniques for faster, more accurate results.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Machine Learning</span>
+                            <span class="tech-badge">Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-status="beta">
+                        <div class="project-header">
+                            <h3 class="project-title">Games Beneath The Keep</h3>
+                            <span class="status-badge beta">Released Beta</span>
+                        </div>
+                        <p class="project-description">
+                            3D game using Unreal Engine. Project was pre-released but later discontinued; handled engine integration and gameplay systems.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Unreal Engine</span>
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">3D</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-status="beta">
+                        <div class="project-header">
+                            <h3 class="project-title">DarkSwords</h3>
+                            <span class="status-badge beta">Released Beta</span>
+                        </div>
+                        <p class="project-description">
+                            2D game using Godot. Released as beta version; implemented core mechanics, level design, and AI behavior.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Godot</span>
+                            <span class="tech-badge">GDScript</span>
+                            <span class="tech-badge">2D</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-status="private">
+                        <div class="project-header">
+                            <h3 class="project-title">Proprietary Game Engine</h3>
+                            <span class="status-badge private">Private</span>
+                        </div>
+                        <p class="project-description">
+                            Recreated complex collision algorithms and optimized rendering pipelines for smoother performance in a custom engine environment.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">OpenGL</span>
+                            <span class="tech-badge">Custom Engine</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-status="private">
+                        <div class="project-header">
+                            <h3 class="project-title">Vulnerability Detection Program</h3>
+                            <span class="status-badge private">Private</span>
+                        </div>
+                        <p class="project-description">
+                            Developed software to identify potential vulnerabilities in low-security websites and platforms, focusing on research and security awareness.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Security</span>
+                            <span class="tech-badge">Web Scraping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
     
     <footer class="footer">
@@ -70,5 +298,6 @@
     </footer>
     
     <script src="js/script.js"></script>
+    <script src="js/about.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mu_rpy</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blackhole.css">
 </head>
 <body class="fade-in">
     <canvas id="networkCanvas"></canvas>
@@ -50,10 +51,43 @@
         
         <div class="right-content">
             <div class="center-container">
-                <div class="blackhole-container">
+                <div class="blackhole-container" id="blackholeContainer">
+                    <!-- Gravitational Lensing Ring -->
+                    <div class="gravitational-lens"></div>
+                    
+                    <!-- Particle Jets -->
+                    <div class="particle-jet jet-top"></div>
+                    <div class="particle-jet jet-bottom"></div>
+                    
+                    <!-- Multiple Accretion Disk Layers -->
+                    <div class="accretion-disk-layer layer-1"></div>
+                    <div class="accretion-disk-layer layer-2"></div>
                     <div class="accretion-disk"></div>
-                    <div class="event-horizon"></div>
-                    <div class="singularity"></div>
+                    
+                    <!-- Hawking Radiation Particles -->
+                    <div class="hawking-particles">
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                        <div class="hawking-particle"></div>
+                    </div>
+                    
+                    <!-- Event Horizon with enhanced effects -->
+                    <div class="event-horizon">
+                        <div class="horizon-distortion"></div>
+                    </div>
+                    
+                    <!-- Singularity -->
+                    <div class="singularity">
+                        <div class="singularity-core"></div>
+                    </div>
+                    
+                    <!-- Photon Sphere -->
+                    <div class="photon-sphere"></div>
                 </div>
             </div>
         </div>
@@ -69,5 +103,6 @@
     </footer>
     
     <script src="js/script.js"></script>
+    <script src="js/blackhole.js"></script>
 </body>
 </html>
