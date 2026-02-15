@@ -1,4 +1,3 @@
-// Black Hole Mouse Interaction & Dynamic Effects
 class BlackHoleInteraction {
     constructor() {
         this.blackhole = document.getElementById('blackholeContainer');
@@ -11,7 +10,7 @@ class BlackHoleInteraction {
         
         this.blackholeRect = null;
         this.blackholeCenter = { x: 0, y: 0 };
-        this.maxDistance = 300; // Maximum distance for interaction
+        this.maxDistance = 300; 
         this.isInteracting = false;
         
         this.init();
@@ -74,10 +73,8 @@ class BlackHoleInteraction {
             this.isInteracting = true;
         }
         
-        // Calculate interaction strength (1 = close, 0 = far)
         const strength = 1 - (distance / this.maxDistance);
         
-        // Apply gravitational pull effect to event horizon
         if (this.eventHorizon) {
             const angle = Math.atan2(dy, dx);
             const pullX = Math.cos(angle) * strength * 5;
@@ -86,13 +83,11 @@ class BlackHoleInteraction {
             this.eventHorizon.style.transform = `translate(calc(-50% + ${pullX}px), calc(-50% + ${pullY}px)) scale(${1 + strength * 0.1})`;
         }
         
-        // Apply subtle rotation to singularity
         if (this.singularity) {
             const rotation = strength * 360;
             this.singularity.style.transform = `translate(-50%, -50%) scale(${1 + strength * 0.05}) rotate(${rotation}deg)`;
         }
         
-        // Distort gravitational lens
         if (this.gravitationalLens) {
             this.gravitationalLens.style.transform = `translate(-50%, -50%) scale(${1 + strength * 0.15}) rotate(${strength * 180}deg)`;
         }
@@ -129,7 +124,6 @@ class BlackHoleInteraction {
     }
     
     createDynamicParticles() {
-        // Create additional floating particles around the black hole
         const particleContainer = document.createElement('div');
         particleContainer.className = 'dynamic-particles';
         particleContainer.style.cssText = `
@@ -145,7 +139,6 @@ class BlackHoleInteraction {
         
         this.blackhole.appendChild(particleContainer);
         
-        // Create 12 orbiting particles
         for (let i = 0; i < 12; i++) {
             this.createOrbitingParticle(particleContainer, i);
         }
@@ -173,7 +166,6 @@ class BlackHoleInteraction {
         
         container.appendChild(particle);
         
-        // Create unique keyframe for each particle
         const keyframes = `
             @keyframes particleOrbit${index} {
                 from {
@@ -197,7 +189,6 @@ class BlackHoleInteraction {
     }
 }
 
-// Energy Wave Effect
 class EnergyWaveEffect {
     constructor() {
         this.blackhole = document.getElementById('blackholeContainer');
@@ -222,7 +213,6 @@ class EnergyWaveEffect {
         
         this.blackhole.appendChild(waveContainer);
         
-        // Create 3 expanding wave rings
         for (let i = 0; i < 3; i++) {
             this.createWaveRing(waveContainer, i);
         }
@@ -249,7 +239,6 @@ class EnergyWaveEffect {
     }
 }
 
-// Add energy wave animation
 const waveStyle = document.createElement('style');
 waveStyle.textContent = `
     @keyframes energyWave {
@@ -268,12 +257,10 @@ waveStyle.textContent = `
 `;
 document.head.appendChild(waveStyle);
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new BlackHoleInteraction();
     new EnergyWaveEffect();
     
-    // Add subtle background distortion effect
     const networkCanvas = document.getElementById('networkCanvas');
     if (networkCanvas) {
         const addCanvasDistortion = () => {
@@ -283,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Performance optimization: Pause animations when tab is not visible
 document.addEventListener('visibilitychange', () => {
     const blackhole = document.getElementById('blackholeContainer');
     if (!blackhole) return;
