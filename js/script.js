@@ -136,29 +136,13 @@ class NetworkBackground {
     }
 }
 
-class RepoOrbit {
+class PageTransitions {
     constructor() {
-        this.repoItems = document.querySelectorAll('.repo-item');
-        this.setupRepositoryAnimation();
         this.setupPageTransitions();
     }
     
-    setupRepositoryAnimation() {
-        this.repoItems.forEach((item, index) => {
-            const angle = index * (360 / this.repoItems.length);
-            item.style.setProperty('--angle', angle);
-            
-            item.addEventListener('click', (e) => {
-                const href = item.getAttribute('href');
-                if (href && href.startsWith('http')) return; 
-                e.preventDefault();
-                this.animateTransition(item);
-            });
-        });
-    }
-    
     setupPageTransitions() {
-        const links = document.querySelectorAll('a:not(.repo-item)');
+        const links = document.querySelectorAll('a:not([target="_blank"])');
         links.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
@@ -172,46 +156,17 @@ class RepoOrbit {
             });
         });
     }
-    
-    animateTransition(item) {
-        const box = item.querySelector('.repo-box');
-        const url = item.href;
-        box.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-        box.style.transform = 'scale(2) rotate(720deg)';
-        box.style.opacity = '0';
-        setTimeout(() => { window.location.href = url; }, 400);
-    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     new NetworkBackground();
-    new RepoOrbit();
+    new PageTransitions();
     
     const contactFlip = document.getElementById('contactFlip');
     if (contactFlip) {
         contactFlip.addEventListener('click', (e) => {
             e.preventDefault();
             contactFlip.classList.toggle('flipped');
-        });
-    }
-    
-    const projectsButton = document.getElementById('projectsButton');
-    const projectsPopup = document.getElementById('projectsPopup');
-    const closePopup = document.getElementById('closePopup');
-    
-    if (projectsButton && projectsPopup) {
-        projectsButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            projectsPopup.classList.add('active');
-        });
-    }
-    
-    if (closePopup && projectsPopup) {
-        closePopup.addEventListener('click', () => {
-            projectsPopup.classList.remove('active');
-        });
-        projectsPopup.addEventListener('click', (e) => {
-            if (e.target === projectsPopup) projectsPopup.classList.remove('active');
         });
     }
 
