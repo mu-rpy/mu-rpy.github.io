@@ -36,7 +36,6 @@
     }
 }
 
-/* Photon Sphere */
 .photon-sphere {
     position: absolute;
     top: 50%;
@@ -72,7 +71,6 @@
     }
 }
 
-/* Particle Jets */
 .particle-jet {
     position: absolute;
     left: 50%;
@@ -124,7 +122,6 @@
     }
 }
 
-/* Enhanced Accretion Disk Layers */
 .accretion-disk-layer {
     position: absolute;
     top: 50%;
@@ -191,7 +188,6 @@
     );
 }
 
-/* Hawking Radiation Particles */
 .hawking-particles {
     position: absolute;
     top: 50%;
@@ -284,7 +280,6 @@
 .hawking-particle:nth-child(7) { --x: -1; --y: 0; }
 .hawking-particle:nth-child(8) { --x: -0.7; --y: -0.7; }
 
-/* Enhanced Event Horizon */
 .event-horizon {
     position: absolute;
     top: 50%;
@@ -339,7 +334,6 @@
     }
 }
 
-/* Enhanced Singularity */
 .singularity {
     position: absolute;
     top: 50%;
@@ -396,7 +390,6 @@
     }
 }
 
-/* Mouse Interaction Effects */
 .blackhole-container.interactive .event-horizon {
     box-shadow: 
         inset 0 0 80px rgba(0, 0, 0, 1),
@@ -425,7 +418,6 @@
     filter: blur(6px) brightness(1.5);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .gravitational-lens {
         width: 280px;
