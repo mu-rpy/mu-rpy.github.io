@@ -1,64 +1,13 @@
 class ProjectsController {
     constructor() {
-        this.cards = document.querySelectorAll('.project-card:not(.coming-soon)');
         this.filterBtns = document.querySelectorAll('.filter-btn');
         this.currentFilter = 'all';
         this.init();
     }
     init() {
-        this.setupCardFlips();
         this.setupFilters();
         this.addCardAnimations();
         this.setupParticleEffects();
-    }
-    setupCardFlips() {
-        this.cards.forEach(card => {
-            const cardFront = card.querySelector('.card-front');
-            const closeBtn = card.querySelector('.close-card');
-            cardFront.addEventListener('click', (e) => {
-                if (!e.target.closest('a')) {
-                    this.flipCard(card);
-                }
-            });
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    this.unflipCard(card);
-                });
-            }
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.project-card')) {
-                this.unflipAllCards();
-            }
-        });
-    }
-    flipCard(card) {
-        this.unflipAllCards();
-        card.classList.add('flipped');
-        this.playFlipSound();
-    }
-    unflipCard(card) {
-        card.classList.remove('flipped');
-    }
-    unflipAllCards() {
-        this.cards.forEach(card => {
-            card.classList.remove('flipped');
-        });
-    }
-    playFlipSound() {
-        const audioContext = window.AudioContext || window.webkitAudioContext;
-        if (!audioContext) return;
-        const ctx = new audioContext();
-        const oscillator = ctx.createOscillator();
-        const gainNode = ctx.createGain();
-        oscillator.connect(gainNode);
-        gainNode.connect(ctx.destination);
-        oscillator.frequency.value = 800;
-        oscillator.type = 'sine';
-        gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
-        oscillator.start(ctx.currentTime);
-        oscillator.stop(ctx.currentTime + 0.1);
     }
     setupFilters() {
         this.filterBtns.forEach(btn => {
@@ -117,13 +66,16 @@ class ProjectsController {
         }, {
             threshold: 0.1
         });
-        this.cards.forEach(card => {
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
             observer.observe(card);
         });
     }
     setupParticleEffects() {
-        this.cards.forEach(card => {
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
             const cardFront = card.querySelector('.card-front');
+            if (!cardFront) return;
             cardFront.addEventListener('mouseenter', (e) => {
                 this.createHoverParticles(cardFront);
             });
@@ -166,7 +118,7 @@ class ProjectsController {
         const animate = () => {
             life++;
             x += vx;
-            y += vy - (life * 0.1); 
+            y += vy - (life * 0.1);
             opacity = 1 - (life / maxLife);
             particle.style.transform = `translate(${x}px, ${y}px)`;
             particle.style.opacity = opacity;
@@ -189,60 +141,6 @@ class ProjectsController {
         return colors[Math.floor(Math.random() * colors.length)];
     }
 }
-class KeyboardNavigation {
-    constructor() {
-        this.cards = Array.from(document.querySelectorAll('.project-card:not(.coming-soon)'));
-        this.currentIndex = -1;
-        this.init();
-    }
-    init() {
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                this.navigateNext();
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                e.preventDefault();
-                this.navigatePrevious();
-            } else if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.toggleCurrentCard();
-            } else if (e.key === 'Escape') {
-                this.closeAllCards();
-            }
-        });
-    }
-    navigateNext() {
-        this.currentIndex = (this.currentIndex + 1) % this.cards.length;
-        this.focusCard(this.currentIndex);
-    }
-    navigatePrevious() {
-        this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
-        this.focusCard(this.currentIndex);
-    }
-    focusCard(index) {
-        const card = this.cards[index];
-        if (!card) return;
-        this.cards.forEach(c => c.style.outline = 'none');
-        card.style.outline = '3px solid rgba(139, 233, 253, 0.6)';
-        card.style.outlineOffset = '5px';
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    toggleCurrentCard() {
-        const card = this.cards[this.currentIndex];
-        if (!card) return;
-        if (card.classList.contains('flipped')) {
-            card.classList.remove('flipped');
-        } else {
-            this.closeAllCards();
-            card.classList.add('flipped');
-        }
-    }
-    closeAllCards() {
-        this.cards.forEach(card => card.classList.remove('flipped'));
-        this.cards.forEach(c => c.style.outline = 'none');
-        this.currentIndex = -1;
-    }
-}
 class CardTiltEffect {
     constructor() {
         this.cards = document.querySelectorAll('.project-card');
@@ -253,7 +151,6 @@ class CardTiltEffect {
             const cardFront = card.querySelector('.card-front');
             if (!cardFront) return;
             cardFront.addEventListener('mousemove', (e) => {
-                if (card.classList.contains('flipped')) return;
                 const rect = cardFront.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -303,7 +200,6 @@ class GlowTrailEffect {
 }
 document.addEventListener('DOMContentLoaded', () => {
     new ProjectsController();
-    new KeyboardNavigation();
     new CardTiltEffect();
     new GlowTrailEffect();
     const elements = document.querySelectorAll('.projects-header, .filter-container, .projects-grid, .navigation-footer');
