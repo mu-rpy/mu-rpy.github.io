@@ -186,6 +186,8 @@ body.fade-out {
 
 .tech-icon span:first-child {
     font-size: 1.5rem;
+    color: var(--accent-white);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
 }
 
 .tech-label {
@@ -198,6 +200,10 @@ body.fade-out {
     box-shadow: 0 0 15px var(--glow-gray);
     transform: translateY(-2px);
     border-color: var(--accent-white);
+}
+
+.tech-icon:hover span:first-child {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 .radial-menu-wrapper {
@@ -327,8 +333,16 @@ body.fade-out {
 }
 
 .radial-item-icon {
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin-bottom: 3px;
+    color: var(--accent-white);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+    transition: all 0.3s ease;
+}
+
+.radial-item:hover .radial-item-icon {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    transform: scale(1.1);
 }
 
 .radial-item-text {
@@ -547,7 +561,7 @@ body.fade-out {
     }
 
     .radial-item-icon {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .radial-item-text {
