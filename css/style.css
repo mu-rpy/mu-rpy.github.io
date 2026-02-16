@@ -23,10 +23,14 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     overflow-x: hidden;
-    overflow-y: hidden;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -79,11 +83,9 @@ body.fade-out {
 }
 
 .main-layout {
-    position: fixed;
-    top: -20px;
-    left: 20px;
+    position: relative;
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -417,7 +419,7 @@ body.fade-out {
     position: relative;
     width: 650px;
     height: 650px;
-    left: -4vw;
+    left: -1vw;
 }
 
 .blackhole-container {
