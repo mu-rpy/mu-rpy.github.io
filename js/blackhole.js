@@ -156,8 +156,8 @@ class BlackHoleInteraction {
             width: ${size}px;
             height: ${size}px;
             border-radius: 50%;
-            background: rgba(255, 121, 198, ${0.6 + Math.random() * 0.4});
-            box-shadow: 0 0 ${size * 3}px rgba(255, 121, 198, 0.8);
+            background: rgba(22, 22, 22, ${0.6 + Math.random() * 0.4});
+            box-shadow: 0 0 ${size * 3}px rgba(255, 255, 255, 0.8);
             top: 50%;
             left: 50%;
             animation: particleOrbit${index} ${duration}s linear infinite;
@@ -230,7 +230,7 @@ class EnergyWaveEffect {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 2px solid rgba(255, 121, 198, 0.6);
+            border: 2px solid rgba(255, 121, 197, 0);
             animation: energyWave 6s ease-out infinite;
             animation-delay: ${delay}s;
         `;

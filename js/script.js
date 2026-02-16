@@ -9,9 +9,9 @@ class NetworkBackground {
         this.mouseInfluenceDistance = 200;
         
         this.colors = {
-            pink: 'rgba(255, 121, 198, ',
-            purple: 'rgba(189, 147, 249, ',
-            cyan: 'rgba(139, 233, 253, '
+            white: 'rgba(255, 255, 255, ',
+            lightGray: 'rgba(208, 208, 208, ',
+            gray: 'rgba(128, 128, 128, '
         };
         
         this.init();
@@ -39,7 +39,7 @@ class NetworkBackground {
                 vx: (Math.random() - 0.5) * 0.4,
                 vy: (Math.random() - 0.5) * 0.4,
                 radius: Math.random() * 2 + 1,
-                colorKey: ['pink', 'purple', 'cyan'][Math.floor(Math.random() * 3)]
+                colorKey: ['white', 'lightGray', 'gray'][Math.floor(Math.random() * 3)]
             });
         }
     }
@@ -162,11 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
     new NetworkBackground();
     new PageTransitions();
     
-    const contactFlip = document.getElementById('contactFlip');
-    if (contactFlip) {
-        contactFlip.addEventListener('click', (e) => {
+    const contactItem = document.getElementById('contactItem');
+    if (contactItem) {
+        contactItem.addEventListener('click', (e) => {
             e.preventDefault();
-            contactFlip.classList.toggle('flipped');
+            contactItem.classList.toggle('flipped');
         });
     }
 

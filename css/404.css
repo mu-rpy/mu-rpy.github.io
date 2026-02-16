@@ -13,11 +13,11 @@
     color: var(--text-primary);
     line-height: 1;
     margin-bottom: 10px;
-    background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan));
+    background: linear-gradient(135deg, var(--accent-white), var(--accent-light-gray), var(--accent-gray));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 80px var(--glow-purple);
+    text-shadow: 0 0 80px var(--glow-white);
     animation: glitchError 2s ease-in-out infinite;
 }
 
@@ -54,8 +54,8 @@
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 
-        0 0 60px var(--glow-pink),
-        0 0 100px var(--glow-purple);
+        0 0 60px var(--glow-white),
+        0 0 100px var(--glow-gray);
     animation: trollBounce 2s ease-in-out infinite;
     position: relative;
 }
@@ -82,7 +82,7 @@
     background: linear-gradient(
         45deg,
         transparent,
-        var(--glow-cyan),
+        var(--glow-white),
         transparent
     );
     animation: trollSpin 3s linear infinite;
@@ -99,30 +99,30 @@
     object-fit: cover;
     position: relative;
     z-index: 2;
-    filter: brightness(1.1) contrast(1.1);
+    filter: brightness(1.1) contrast(1.1) grayscale(100%);
 }
 
 .home-link {
     display: inline-block;
     padding: 12px 32px;
     background: var(--bg-secondary);
-    border: 2px solid var(--accent-purple);
+    border: 2px solid var(--accent-light-gray);
     border-radius: 8px;
     color: var(--text-primary);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px var(--glow-purple);
+    box-shadow: 0 0 20px var(--glow-gray);
     margin-bottom: 20px;
 }
 
 .home-link:hover {
-    background: rgba(255, 121, 198, 0.2);
-    border-color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-white);
     box-shadow: 
-        0 0 30px var(--glow-cyan),
-        0 0 50px var(--glow-pink);
+        0 0 30px var(--glow-white),
+        0 0 50px var(--glow-gray);
     transform: translateY(-3px);
 }
 

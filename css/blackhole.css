@@ -6,11 +6,11 @@
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    border: 3px solid rgba(255, 121, 198, 0.4);
+    border: 3px solid rgba(200, 200, 200, 0.3);
     box-shadow: 
-        0 0 40px rgba(255, 121, 198, 0.6),
-        0 0 80px rgba(255, 121, 198, 0.3),
-        inset 0 0 40px rgba(255, 121, 198, 0.2);
+        0 0 40px rgba(200, 200, 200, 0.4),
+        0 0 80px rgba(150, 150, 150, 0.2),
+        inset 0 0 40px rgba(200, 200, 200, 0.15);
     z-index: 2;
     animation: lensPulse 4s ease-in-out infinite, lensRotate 30s linear infinite;
     pointer-events: none;
@@ -44,10 +44,10 @@
     width: 280px;
     height: 280px;
     border-radius: 50%;
-    border: 2px solid rgba(139, 233, 253, 0.3);
+    border: 2px solid rgba(180, 180, 180, 0.25);
     box-shadow: 
-        0 0 30px rgba(139, 233, 253, 0.4),
-        inset 0 0 30px rgba(139, 233, 253, 0.2);
+        0 0 30px rgba(180, 180, 180, 0.3),
+        inset 0 0 30px rgba(180, 180, 180, 0.15);
     z-index: 2;
     animation: photonOrbit 20s linear infinite, photonFlicker 2s ease-in-out infinite;
     pointer-events: none;
@@ -80,9 +80,9 @@
     background: linear-gradient(
         to bottom,
         transparent,
-        rgba(139, 233, 253, 0.6) 20%,
-        rgba(139, 233, 253, 0.8) 40%,
-        rgba(139, 233, 253, 0.4) 60%,
+        rgba(180, 180, 180, 0.4) 20%,
+        rgba(220, 220, 220, 0.6) 40%,
+        rgba(180, 180, 180, 0.3) 60%,
         transparent
     );
     filter: blur(8px);
@@ -152,10 +152,10 @@
     background: conic-gradient(
         from 45deg,
         transparent,
-        rgba(189, 147, 249, 0.5) 20%,
+        rgba(120, 120, 120, 0.35) 20%,
         transparent 40%,
         transparent 60%,
-        rgba(189, 147, 249, 0.6) 80%,
+        rgba(120, 120, 120, 0.4) 80%,
         transparent
     );
 }
@@ -180,10 +180,10 @@
     background: conic-gradient(
         from 90deg,
         transparent,
-        rgba(255, 121, 198, 0.4) 30%,
+        rgba(200, 200, 200, 0.25) 30%,
         transparent 50%,
         transparent 70%,
-        rgba(255, 121, 198, 0.5) 90%,
+        rgba(200, 200, 200, 0.3) 90%,
         transparent
     );
 }
@@ -204,8 +204,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba(139, 233, 253, 0.9);
-    box-shadow: 0 0 15px rgba(139, 233, 253, 0.8);
+    background: rgba(190, 190, 190, 0.7);
+    box-shadow: 0 0 15px rgba(220, 220, 220, 0.6);
     animation: hawkingEscape 4s ease-out infinite;
 }
 
@@ -292,16 +292,33 @@
         #000000 0%, 
         #050505 40%, 
         #0a0a0a 60%,
-        rgba(255, 121, 198, 0.1) 100%
+        rgba(200, 200, 200, 0.05) 100%
     );
     box-shadow: 
         inset 0 0 80px rgba(0, 0, 0, 1),
-        0 0 60px rgba(255, 121, 198, 0.6),
-        0 0 100px rgba(255, 121, 198, 0.4),
-        0 0 150px rgba(255, 121, 198, 0.2);
+        0 0 60px rgba(200, 200, 200, 0.4),
+        0 0 100px rgba(180, 180, 180, 0.25),
+        0 0 150px rgba(150, 150, 150, 0.12);
     animation: pulseHorizon 4s ease-in-out infinite;
     z-index: 3;
     transition: all 0.3s ease;
+}
+
+@keyframes pulseHorizon {
+    0%, 100% {
+        box-shadow: 
+            inset 0 0 80px rgba(0, 0, 0, 1),
+            0 0 60px rgba(200, 200, 200, 0.4),
+            0 0 100px rgba(180, 180, 180, 0.25),
+            0 0 150px rgba(150, 150, 150, 0.12);
+    }
+    50% {
+        box-shadow: 
+            inset 0 0 80px rgba(0, 0, 0, 1),
+            0 0 80px rgba(220, 220, 220, 0.6),
+            0 0 130px rgba(200, 200, 200, 0.4),
+            0 0 180px rgba(180, 180, 180, 0.18);
+    }
 }
 
 .horizon-distortion {
@@ -313,7 +330,7 @@
     height: 100%;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, 
-        rgba(255, 121, 198, 0.2),
+        rgba(200, 200, 200, 0.12),
         transparent 50%
     );
     animation: distortionShift 6s ease-in-out infinite;
@@ -322,13 +339,13 @@
 @keyframes distortionShift {
     0%, 100% {
         background: radial-gradient(circle at 30% 30%, 
-            rgba(255, 121, 198, 0.2),
+            rgba(200, 200, 200, 0.12),
             transparent 50%
         );
     }
     50% {
         background: radial-gradient(circle at 70% 70%, 
-            rgba(139, 233, 253, 0.2),
+            rgba(180, 180, 180, 0.12),
             transparent 50%
         );
     }
@@ -360,13 +377,13 @@
     height: 20px;
     border-radius: 50%;
     background: radial-gradient(circle at center,
-        rgba(255, 121, 198, 0.8),
-        rgba(255, 121, 198, 0.4) 40%,
+        rgba(220, 220, 220, 0.6),
+        rgba(180, 180, 180, 0.25) 40%,
         transparent 70%
     );
     box-shadow: 
-        0 0 20px rgba(255, 121, 198, 0.6),
-        0 0 40px rgba(255, 121, 198, 0.3);
+        0 0 20px rgba(200, 200, 200, 0.4),
+        0 0 40px rgba(180, 180, 180, 0.2);
     animation: coreFlicker 1.5s ease-in-out infinite;
 }
 
@@ -390,27 +407,113 @@
     }
 }
 
+.accretion-disk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: diskRotate 25s linear infinite;
+}
+
+@keyframes diskRotate {
+    from {
+        transform: translate(-50%, -50%) rotateX(65deg) rotateY(-15deg) rotateZ(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateX(65deg) rotateY(-15deg) rotateZ(360deg);
+    }
+}
+
+.accretion-disk::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(220, 220, 220, 0.7) 20deg,
+        rgba(180, 180, 180, 0.6) 40deg,
+        rgba(220, 220, 220, 0.45) 60deg,
+        rgba(150, 150, 150, 0.5) 80deg,
+        transparent 100deg,
+        transparent 140deg,
+        rgba(220, 220, 220, 0.6) 160deg,
+        rgba(190, 190, 190, 0.7) 180deg,
+        rgba(220, 220, 220, 0.55) 200deg,
+        rgba(150, 150, 150, 0.45) 220deg,
+        transparent 240deg,
+        transparent 280deg,
+        rgba(220, 220, 220, 0.6) 300deg,
+        rgba(180, 180, 180, 0.5) 320deg,
+        rgba(220, 220, 220, 0.35) 340deg,
+        transparent 360deg
+    );
+    box-shadow: 
+        0 0 80px rgba(200, 200, 200, 0.4),
+        0 0 120px rgba(180, 180, 180, 0.25),
+        0 0 160px rgba(150, 150, 150, 0.12),
+        inset 0 0 80px rgba(200, 200, 200, 0.15);
+    filter: blur(4px);
+}
+
+.accretion-disk::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        transparent 25%,
+        rgba(220, 220, 220, 0.25) 45%,
+        rgba(180, 180, 180, 0.2) 65%,
+        transparent 85%
+    );
+    animation: diskPulse 3s ease-in-out infinite;
+}
+
+@keyframes diskPulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
 .blackhole-container.interactive .event-horizon {
     box-shadow: 
         inset 0 0 80px rgba(0, 0, 0, 1),
-        0 0 80px rgba(255, 121, 198, 0.9),
-        0 0 140px rgba(255, 121, 198, 0.6),
-        0 0 200px rgba(255, 121, 198, 0.3);
+        0 0 80px rgba(220, 220, 220, 0.7),
+        0 0 140px rgba(200, 200, 200, 0.5),
+        0 0 200px rgba(180, 180, 180, 0.22);
 }
 
 .blackhole-container.interactive .singularity {
     transform: translate(-50%, -50%) scale(1.05);
     box-shadow: 
         inset 0 0 60px rgba(0, 0, 0, 1),
-        0 0 50px rgba(255, 121, 198, 0.8);
+        0 0 50px rgba(220, 220, 220, 0.6);
 }
 
 .blackhole-container.interactive .gravitational-lens {
-    border-color: rgba(255, 121, 198, 0.7);
+    border-color: rgba(220, 220, 220, 0.5);
     box-shadow: 
-        0 0 60px rgba(255, 121, 198, 0.8),
-        0 0 100px rgba(255, 121, 198, 0.5),
-        inset 0 0 60px rgba(255, 121, 198, 0.3);
+        0 0 60px rgba(220, 220, 220, 0.6),
+        0 0 100px rgba(200, 200, 200, 0.35),
+        inset 0 0 60px rgba(200, 200, 200, 0.2);
 }
 
 .blackhole-container.interactive .particle-jet {

@@ -20,22 +20,22 @@
 }
 
 .license-container::-webkit-scrollbar-thumb {
-    background: var(--accent-purple);
+    background: var(--accent-light-gray);
     border-radius: 4px;
 }
 
 .license-container::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-cyan);
+    background: var(--accent-white);
 }
 
 .license-box {
     background: var(--bg-secondary);
-    border: 2px solid var(--accent-purple);
+    border: 2px solid var(--accent-light-gray);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.6),
-        0 0 30px var(--glow-purple);
+        0 0 30px var(--glow-gray);
     backdrop-filter: blur(10px);
 }
 
@@ -45,7 +45,7 @@
     color: var(--text-primary);
     margin-bottom: 25px;
     text-align: center;
-    background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan));
+    background: linear-gradient(135deg, var(--accent-white), var(--accent-light-gray), var(--accent-gray));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -63,15 +63,15 @@
 
 .license-copyright {
     font-weight: 600;
-    color: var(--accent-cyan);
+    color: var(--accent-white);
     font-size: 1.1rem;
 }
 
 .warranty {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
-    background: rgba(255, 121, 198, 0.05);
-    border-left: 3px solid var(--accent-purple);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent-light-gray);
     padding: 15px;
     border-radius: 4px;
 }
@@ -80,7 +80,7 @@
     display: block;
     text-align: center;
     margin-top: 30px;
-    color: var(--accent-cyan);
+    color: var(--accent-white);
     text-decoration: none;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -88,7 +88,7 @@
 
 .back-link:hover {
     color: var(--text-primary);
-    text-shadow: 0 0 10px var(--glow-cyan);
+    text-shadow: 0 0 10px var(--glow-white);
     transform: translateX(-5px);
 }
 
