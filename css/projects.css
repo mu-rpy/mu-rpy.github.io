@@ -274,7 +274,7 @@
     border: 1px solid var(--accent-light-gray);
     color: var(--accent-light-gray);
 }
-.status-badge.maintained {
+.status-badge.ARCHIVED {
     background: rgba(128, 128, 128, 0.2);
     border: 1px solid var(--accent-gray);
     color: var(--accent-gray);
