@@ -132,11 +132,11 @@ class ProjectsController {
     }
     getRandomColor() {
         const colors = [
-            'rgba(255, 121, 198, 0.8)',
-            'rgba(189, 147, 249, 0.8)',
-            'rgba(139, 233, 253, 0.8)',
-            'rgba(80, 250, 123, 0.8)',
-            'rgba(241, 250, 140, 0.8)'
+            'rgba(255, 255, 255, 0.8)',
+            'rgba(206, 200, 200, 0.8)',
+            'rgba(255, 255, 255, 0.8)',
+            'rgba(219, 219, 219, 0.8)',
+            'rgba(177, 177, 177, 0.8)'
         ];
         return colors[Math.floor(Math.random() * colors.length)];
     }
@@ -189,7 +189,7 @@ class GlowTrailEffect {
                     glow.style.background = `
                         radial-gradient(
                             circle at ${x}% ${y}%, 
-                            rgba(255, 121, 198, 0.3), 
+                            rgba(255, 255, 255, 0.3), 
                             transparent 50%
                         )
                     `;
